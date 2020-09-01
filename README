@@ -1,0 +1,31 @@
+localではどこで作業してたか？
+どこで鍵を作るか？
+Error: NoCredentialProviders: no valid providers in chain. Deprecated.
+
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+
+  on main.tf line 2, in provider "aws":
+
+   2: provider "aws" {
+
+
+が出てきた時の対処法は？
+export AWS_SECRET_ACCESS_KEY=(ここに""とかで囲まずにそのまま貼る)
+export AWS_ACCESS_KEY_ID=(ここに""とかで囲まずにそのまま貼る)
+export AWS_DEFAULT_REGION=ap-northeast-1 #これに関しては必要かどうか不明
+
+Error launching source instance: InvalidKeyPair.NotFound: The key pair 'terraform_handson_on_docker' does not exist
+
+
+EC2->キーペアでterraform_handson_on_dockerを作らないとkeyがないってエラーが出る。
+どのYouTubeをパクったか？https://www.youtube.com/watch?v=NRSN57kQsvE
+
+鍵がオープン過ぎて、ec2に入れない。-> chmod 600 terraform_handson_on_docker.pem
+何を作ったか？->
+・VPC
+・Internet Gateway
+・Route table
+・subnet
+・EC2
+（・Security Group）
+・５つからなるやつと比べて、ElasticIPを設定してない気がする。見落とし？
